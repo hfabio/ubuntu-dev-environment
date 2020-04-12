@@ -1,4 +1,8 @@
 #!/bin/bash
+#making useful directories
+mkdir ~/PWAs
+mkdir ~/Projetos
+mkdir ~/ISOs
 # removing locks from SO
 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 sudo dpkg --add-architecture i386
