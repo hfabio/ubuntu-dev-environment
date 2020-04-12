@@ -63,7 +63,7 @@ wget -c https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O /
 # google chrome
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/google_chrome.deb
 # Insync
-wget https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.1.2.40785-bionic_amd64.deb -O /tmp/insync_3.1.2.deb
+#wget https://d2t3ff60b2tol4.cloudfront.net/builds/insync_3.1.2.40785-bionic_amd64.deb -O /tmp/insync_3.1.2.deb
 # Dropbox
 wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb -O /tmp/dropbox.deb
 # skype
