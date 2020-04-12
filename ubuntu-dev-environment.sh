@@ -8,7 +8,7 @@ sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 sudo dpkg --add-architecture i386
 
 # first lets update everything
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade -y && sudo apt-get autoclean && sudo apt-get autoremove -y
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 # adding repositories
 sudo apt-add-repository ppa:graphics-drivers/ppa -y
@@ -113,7 +113,7 @@ sudo apt-get install lutris libvulkan1 libvulkan1:i386 -y
 sudo apt-get install krita kdenlive -y
 
 # finishing  -------------------------------------------------------------------
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade -y && sudo apt-get autoclean && sudo apt-get autoremove -y
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 # lets install
 clear
