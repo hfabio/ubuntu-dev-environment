@@ -125,6 +125,6 @@ sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y &
 # lets install
 clear_and_print 'Lets install zsh with configurated theme'
 sudo apt-get install fonts-powerline -y
-wget https://raw.githubusercontent.com/Viniciusalopes/zsh-magic-install/master/zsh-magic-install -O /tmp/zsh-magic-install.sh
+wget https://raw.githubusercontent.com/hfabio/zsh-magic-install/master/zsh-magic-install -O /tmp/zsh-magic-install.sh
 sudo chmod 775 /tmp/zsh-magic-install.sh
 sudo /tmp/zsh-magic-install.sh
