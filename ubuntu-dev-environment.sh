@@ -37,11 +37,16 @@ sudo apt-get install apache2 php7.2 php-mysql php-xdebug -y
 sudo apt-get install mysql-server-5.7 mysql-client-5.7 mysql-workbench mysql-workbench-data -y
 
 # nodejs 12.16.2
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt-get install nodejs -y
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+source ~/.profile
+nvm install 12.16.2
+#-------------------------------------------------------------------------------
+#curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+#sudo apt-get install nodejs -y
 
 # npm
-sudo apt-get install npm -y
+#sudo apt-get install npm -y
+#-------------------------------------------------------------------------------
 
 #yarn
 sudo npm i -g yarn
