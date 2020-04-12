@@ -122,6 +122,7 @@ sudo apt-get install lutris libvulkan1 libvulkan1:i386 -y
 sudo apt-get install krita kdenlive -y
 
 # finishing  -------------------------------------------------------------------
+clear_and_print 'Finishing with another update and then autoclean autoremove'
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 # lets install
