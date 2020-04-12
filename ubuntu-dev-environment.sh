@@ -1,8 +1,18 @@
 #!/bin/bash
+# function to clear screen and print a message before next step
+clear_and_print()
+{
+  clear
+  echo $1
+}
+
 #making useful directories
+clear_and_print 'creating folders'
 mkdir ~/PWAs
 mkdir ~/Projetos
 mkdir ~/ISOs
+
+clear_and_print 'removing lockers'
 # removing locks from SO
 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 sudo dpkg --add-architecture i386
@@ -18,7 +28,7 @@ sudo apt-get update && sudo apt-get install git zsh curl vim htop filezilla -y
 sudo apt-get install ttf-mscorefonts-installer ubuntu-restricted-extras libavcodec-extra libav-tools -y
 
 # then the languages/compilers -------------------------------------------------
-
+clear_and_print 'installing dev stuff'
 # php
 sudo apt-get install apache2 php7.2 php-mysql php-xdebug -y
 
@@ -64,14 +74,12 @@ sudo apt-get update
 sudo apt-get install insomnia -y
 
 # now installing .deb stuff ----------------------------------------------------
-clear
-echo 'now installing .deb stuff'
+clear_and_print 'now installing .deb stuff'
 sudo chmod 775 /tmp/*.deb
 sudo dpkg -i /tmp/*.deb || sudo apt-get --fix-broken install -y && sudo dpkg -i /tmp/*.deb
 
 # now installing no important stuff like games or music ------------------------
-clear
-echo 'now installing no important stuff like games or music'
+clear_and_print 'now installing no important stuff like games or music'
 # removing stuff and adding ppas------------------
 sudo apt-get autoremove gimp gimp-plugin-registry
 sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y
@@ -117,8 +125,7 @@ sudo apt-get install krita kdenlive -y
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 # lets install
-clear
-echo 'Lets install zsh with configurated theme'
+clear_and_print 'Lets install zsh with configurated theme'
 sudo apt-get install fonts-powerline -y
 wget https://raw.githubusercontent.com/Viniciusalopes/zsh-magic-install/master/zsh-magic-install -O /tmp/zsh-magic-install.sh
 sudo chmod 775 /tmp/zsh-magic-install.sh
