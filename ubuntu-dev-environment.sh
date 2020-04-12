@@ -106,6 +106,8 @@ sudo apt install gnome-tweaks -y
 
 # font cascadia
 sudo wget https://github.com/microsoft/cascadia-code/releases/download/v1911.21/Cascadia.ttf -O /usr/share/fonts/truetype/Cascadia.ttf
+sudo wget https://github.com/microsoft/cascadia-code/releases/download/v1911.21/CascadiaMono.ttf -O /usr/share/fonts/truetype/CascadiaMono.ttf
+sudo wget https://github.com/microsoft/cascadia-code/releases/download/v1911.21/CascadiaMonoPL.ttf -O /usr/share/fonts/truetype/CascadiaMonoPL.ttf
 
 # Steam
 sudo apt install steam-installer steam-devices steam:i386 -y
@@ -124,8 +126,8 @@ clear_and_print 'Finishing with another update and then autoclean autoremove'
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoclean -y && sudo apt-get autoremove -y
 
 # lets install
-clear_and_print 'Lets install zsh with configurated theme'
+clear_and_print 'Lets install zsh with configurated theme\nPay attention, you will need to insert your password here...'
 sudo apt-get install fonts-powerline -y
 wget https://raw.githubusercontent.com/hfabio/zsh-magic-install/master/zsh-magic-install -O /tmp/zsh-magic-install.sh
 sudo chmod 775 /tmp/zsh-magic-install.sh
-sudo /tmp/zsh-magic-install.sh
+/tmp/zsh-magic-install.sh
