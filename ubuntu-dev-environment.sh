@@ -16,6 +16,7 @@ clear_and_print 'removing lockers'
 # removing locks from SO
 sudo rm /var/lib/dpkg/lock-frontend; sudo rm /var/cache/apt/archives/lock ;
 sudo dpkg --add-architecture i386
+sudo dpkg --configure -a
 
 # first lets update everything
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoclean -y && sudo apt-get autoremove -y
