@@ -73,8 +73,10 @@ sudo dpkg -i /tmp/*.deb || sudo apt-get --fix-broken install && sudo dpkg -i /tm
 
 #removing stuff and adding ppas------------------
 sudo apt-get autoremove gimp gimp-plugin-registry
-sudo add-apt-repository ppa:otto-kesselgulasch/gimp
-sudo add-apt-repository ppa:lutris-team/lutris
+sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y
+sudo add-apt-repository ppa:kritalime/ppa -y
+sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
+sudo add-apt-repository ppa:lutris-team/lutris -y
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key
 sudo apt update
@@ -107,6 +109,8 @@ sudo apt install --install-recommends winehq-stable wine-stable wine-stable-i386
 # Lutris
 sudo apt-get install lutris libvulkan1 libvulkan1:i386 -y
 
+# krita e kdenlive
+sudo apt-get install krita kdenlive -y
 
 # finishing  -------------------------------------------------------------------
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade -y && sudo apt-get autoclean && sudo apt-get autoremove -y
