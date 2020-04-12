@@ -73,6 +73,7 @@ sudo ./ubuntu-dev-environment.sh
 
 ---
 # Known issues
+
 ### oh-my-zsh
 Unfortunely we know the automatic oh-my-zsh instalation isn't working properly fine. (I'm trying to use my [Viniciusalopes/zsh-magic-install](https://github.com/Viniciusalopes/zsh-magic-install) fork removing the OS verification)
 I hope some updates in this part soon.
@@ -83,3 +84,7 @@ I hope some updates in this part soon.
 Even installing these packages via .deb they add PPAs which are not working, and it make the OS update got broken.
 
 **These was removed from the script to avoid updates issues.**
+
+### Mysql server 5.7 version
+The mysql 5.7 packages wasn't found in ubuntu repositories, I think it's because wasn't populated all packages to the current OS version with the 18.04 version yet.
+But the .deb can be downloaded [right here](https://dev.mysql.com/downloads/mysql/5.7.html). I just don't know if it's worth to implement right now.
