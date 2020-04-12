@@ -15,7 +15,7 @@ sudo apt-add-repository ppa:graphics-drivers/ppa -y
 
 #first let's install some stuff to make another stuff work or to controll system
 sudo apt-get update && sudo apt-get install git zsh curl vim htop filezilla -y
-sudo apt-get update && ttf-mscorefonts-installer ubuntu-restricted-extras libavcodec-extra libav-tools -y
+sudo apt-get install ttf-mscorefonts-installer ubuntu-restricted-extras libavcodec-extra libav-tools -y
 
 # then the languages/compilers -------------------------------------------------
 
@@ -67,7 +67,7 @@ sudo apt-get install insomnia -y
 
 # now installing .deb stuff ----------------------------------------------------
 sudo chmod 775 /tmp/*.deb
-sudo dpkg -i /tmp/*.deb || sudo apt-get --fix-broken install && sudo dpkg -i /tmp/*.deb
+sudo dpkg -i /tmp/*.deb || sudo apt-get --fix-broken install -y && sudo dpkg -i /tmp/*.deb
 
 # now installing no important stuff like games or music ------------------------
 
@@ -78,7 +78,7 @@ sudo add-apt-repository ppa:kritalime/ppa -y
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable -y
 sudo add-apt-repository ppa:lutris-team/lutris -y
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
-sudo apt-key add winehq.key
+sudo apt-key add winehq.key -y
 sudo apt update
 #removing stuff and adding ppas------------------
 
@@ -95,7 +95,7 @@ sudo apt-get update
 sudo apt-get install gimp -y
 
 # gnome-tweaks
-sudo apt install gnome-tweaks
+sudo apt install gnome-tweaks -y
 
 # font cascadia
 sudo wget https://github.com/microsoft/cascadia-code/releases/download/v1911.21/Cascadia.ttf -O /usr/share/fonts/truetype/Cascadia.ttf
@@ -121,4 +121,4 @@ echo 'Lets install zsh with configurated theme'
 sudo apt-get install fonts-powerline -y
 wget https://raw.githubusercontent.com/Viniciusalopes/zsh-magic-install/master/zsh-magic-install -O /tmp/zsh-magic-install.sh
 sudo chmod 775 /tmp/zsh-magic-install.sh
-sudo ./tmp/zsh-magic-install.sh
+sudo /tmp/zsh-magic-install.sh
