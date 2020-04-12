@@ -68,11 +68,6 @@ wget https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb -O /tmp/disc
 wget https://dl.4kdownload.com/app/4kvideodownloader_4.9.2-1_amd64.deb -O /tmp/4kvideodownloader.deb
 # create-react-app
 sudo npm i -g create-react-app
-#instale o insomnia
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \ | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \ | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install insomnia -y
 
 # now installing .deb stuff ----------------------------------------------------
 clear_and_print 'now installing .deb stuff'
@@ -94,11 +89,6 @@ sudo apt update
 
 # Nativifier (to create PWAs)
 sudo npm i -g nativefier
-
-# Spotify
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update && sudo apt-get install spotify-client -y
 
 # gimp
 sudo apt-get update
