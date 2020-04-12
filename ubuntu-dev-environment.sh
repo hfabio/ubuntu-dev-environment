@@ -28,7 +28,7 @@ sudo apt-get install mysql-server-5.7 mysql-client-5.7 mysql-workbench mysql-wor
 # nodejs 12.16.2
 curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 sudo sh -c "echo deb https://deb.nodesource.com/node_12.x bionic main \
-> /etc/apt/sources.list.d/nodesource.list"
+> /etc/apt/sources.list.d/nodesource.list" -y
 sudo apt-get install nodejs -y
 
 # npm
@@ -66,12 +66,15 @@ sudo apt-get update
 sudo apt-get install insomnia -y
 
 # now installing .deb stuff ----------------------------------------------------
+clear
+echo 'now installing .deb stuff'
 sudo chmod 775 /tmp/*.deb
 sudo dpkg -i /tmp/*.deb || sudo apt-get --fix-broken install -y && sudo dpkg -i /tmp/*.deb
 
 # now installing no important stuff like games or music ------------------------
-
-#removing stuff and adding ppas------------------
+clear
+echo 'now installing no important stuff like games or music'
+# removing stuff and adding ppas------------------
 sudo apt-get autoremove gimp gimp-plugin-registry
 sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y
 sudo add-apt-repository ppa:kritalime/ppa -y
@@ -80,7 +83,7 @@ sudo add-apt-repository ppa:lutris-team/lutris -y
 wget -nc https://dl.winehq.org/wine-builds/winehq.key
 sudo apt-key add winehq.key -y
 sudo apt update
-#removing stuff and adding ppas------------------
+# end removing stuff and adding ppas------------------
 
 # Nativifier (to create PWAs)
 sudo npm i -g nativefier
