@@ -75,11 +75,10 @@ sudo ./ubuntu-dev-environment.sh
 ---
 # Gnome shell extensions
 
-[TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) - Add icons to tray
-[Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) - Add place folders to gnome shell
-[Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
-
-[Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+- [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) - Add icons to tray
+- [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) - Add place folders to gnome shell
+- [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/) - add handler for usb drivers
+- [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/) - not necessary anymore, but link still here
 ---
 # Known issues
 
