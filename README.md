@@ -8,6 +8,7 @@
 - Downloading the script
   - [Just the script](#saving-only-the-script)
   - [Cloning the repository](#cloning-the-repository)
+- [Gnome shell extensions](#gnome-shell-extensions)
 - [Known issues](#known-issues)
 
 ---
@@ -71,6 +72,14 @@ Now just execute the script as SU
 sudo ./ubuntu-dev-environment.sh
 ```
 
+---
+# Gnome shell extensions
+
+[TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/) - Add icons to tray
+[Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) - Add place folders to gnome shell
+[Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/)
+
+[Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
 ---
 # Known issues
 
