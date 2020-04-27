@@ -38,12 +38,12 @@ sudo apt-get install mysql-server-5.7 mysql-client-5.7 mysql-workbench mysql-wor
 
 # nodejs 12.16.2
 clear_and_print 'trying to install node 12.16.2'
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash &&
-source ~/.profile &&
-nvm install 12.16.2
+#wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash &&
+#source ~/.profile &&
+#nvm install 12.16.2
 #-------------------------------------------------------------------------------
-#curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-#sudo apt-get install nodejs -y
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install nodejs -y
 
 #-------------------------------------------------------------------------------
 
