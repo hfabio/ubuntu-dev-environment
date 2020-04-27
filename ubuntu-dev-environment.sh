@@ -59,6 +59,8 @@ sudo apt-get install python3.7 pip3 python3-mysql.connector -y
 # then the IDE, browser and stuffs ---------------------------------------------
 # VSCODE
 wget https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable -O /tmp/code_latest_amd64.deb
+# github desktop
+wget https://github.com/shiftkey/desktop/releases/download/release-2.4.1-linux1/GitHubDesktop-linux-2.4.1-linux1.deb -O /tmp/github_desktop.deb
 # TeamViewer
 wget -c https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O /tmp/teamviewer.deb
 # google chrome
