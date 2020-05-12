@@ -79,6 +79,7 @@ sudo ./ubuntu-dev-environment.sh
 - [Places Status Indicator](https://extensions.gnome.org/extension/8/places-status-indicator/) - Add place folders to gnome shell
 - [Removable Drive Menu](https://extensions.gnome.org/extension/7/removable-drive-menu/) - add handler for usb drivers
 - [Clipboard indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+- [ToDo txt](https://extensions.gnome.org/extension/570/todotxt/) - Add a to-do list
 - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/) - not necessary anymore, but link still here
 ---
 # Known issues
