@@ -114,6 +114,9 @@ sudo wget https://github.com/microsoft/cascadia-code/releases/download/v1911.21/
 sudo wget https://github.com/microsoft/cascadia-code/releases/download/v1911.21/CascadiaMono.ttf -O /usr/share/fonts/truetype/CascadiaMono.ttf
 sudo wget https://github.com/microsoft/cascadia-code/releases/download/v1911.21/CascadiaMonoPL.ttf -O /usr/share/fonts/truetype/CascadiaMonoPL.ttf
 
+# font menlo for terminal fix
+sudo wget https://github.com/abertsch/Menlo-for-Powerline/blob/master/Menlo%20for%20Powerline.ttf -O /usr/share/fonts/truetype/Menlo\ for\ Powerline.ttf
+
 # Steam
 sudo apt install steam-installer steam-devices steam:i386 -y
 
