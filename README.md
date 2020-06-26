@@ -81,6 +81,7 @@ sudo ./ubuntu-dev-environment.sh
 - [Clipboard indicator](https://extensions.gnome.org/extension/779/clipboard-indicator/)
 - [ToDo txt](https://extensions.gnome.org/extension/570/todotxt/) - Add a to-do list
 - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/) - not necessary anymore, but link still here
+- [Status Area Horizontal Spacing](https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/) - Reduce the horizontal spacing between icons in the top-right status area
 ---
 # Known issues
 
