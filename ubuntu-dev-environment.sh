@@ -31,33 +31,8 @@ sudo apt-add-repository ppa:graphics-drivers/ppa -y
 sudo apt-get update && sudo apt install curl -y && sudo apt-get install git zsh vim htop filezilla -y
 sudo apt-get install ttf-mscorefonts-installer ubuntu-restricted-extras libavcodec-extra libav-tools -y
 
-# then the languages/compilers -------------------------------------------------
-clear_and_print 'installing dev stuff'
-# php
-sudo apt-get install apache2 php7.2 php-mysql php-xdebug -y
-
-# mysql
-sudo apt-get install mysql-server-5.7 mysql-client-5.7 mysql-workbench mysql-workbench-data -y
-
-# nodejs 12.16.2
-clear_and_print 'trying to install node 12.16.2'
-#wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash &&
-#source ~/.profile &&
-#nvm install 12.16.2
-#-------------------------------------------------------------------------------
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt-get install nodejs -y
-
-#-------------------------------------------------------------------------------
-
-# verify npm and install if not installed
-which npm || sudo apt-get install npm -y
-
-#yarn
-sudo npm i -g yarn
-
 #python
-sudo apt-get install python3.7 pip3 python3-mysql.connector -y
+sudo apt-get install python3.9 pip3 python3-mysql.connector -y
 
 # then the IDE, browser and stuffs ---------------------------------------------
 # VSCODE
@@ -78,6 +53,8 @@ wget https://repo.skype.com/latest/skypeforlinux-64.deb -O /tmp/skypeforlinux.de
 wget https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb -O /tmp/discord.deb
 # 4k video downloader
 wget https://dl.4kdownload.com/app/4kvideodownloader_4.9.2-1_amd64.deb -O /tmp/4kvideodownloader.deb
+# notable
+wget https://download.notable.app/\?target\=deb -O /tmp/notable.deb
 # create-react-app
 sudo npm i -g create-react-app
 
@@ -129,6 +106,38 @@ sudo apt-get install lutris libvulkan1 libvulkan1:i386 -y
 # krita e kdenlive
 sudo apt-get install krita kdenlive -y
 
+# blanket
+flatpak install flathub com.rafaelmardojai.Blanket
+
+# then the languages/compilers -------------------------------------------------
+clear_and_print 'installing dev stuff'
+# php
+sudo apt-get install apache2 php7.2 php-mysql php-xdebug -y
+
+# mysql
+# sudo apt-get install mysql-server-5.7 mysql-client-5.7 mysql-workbench mysql-workbench-data -y
+
+# installing docker
+clear_and_print 'installing docker'
+sudo apt-get install apt-transport-https ca-certificates gnupg-agent software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" -y
+sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+# docker compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &&
+sudo chmod +x /usr/local/bin/docker-compose &&
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+echo "Docker and docker compose successfully installed"
+docker --version
+docker-compose --version
+
+# nodejs 12.16.2
+clear_and_print 'installing nvm'
+
+#nvm install
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+#-------------------------------------------------------------------------------
 # finishing  -------------------------------------------------------------------
 clear_and_print 'Finishing with another update and then autoclean autoremove'
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoclean -y && sudo apt-get autoremove -y
@@ -139,3 +148,4 @@ sudo apt-get install fonts-powerline -y
 wget https://raw.githubusercontent.com/hfabio/zsh-magic-install/master/zsh-magic-install -O /tmp/zsh-magic-install.sh
 sudo chmod 775 /tmp/zsh-magic-install.sh
 /tmp/zsh-magic-install.sh
+echo 'pay attention to change the theme and add zinit like here https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/'
