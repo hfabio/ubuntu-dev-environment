@@ -55,6 +55,8 @@ wget https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb -O /tmp/disc
 wget https://dl.4kdownload.com/app/4kvideodownloader_4.9.2-1_amd64.deb -O /tmp/4kvideodownloader.deb
 # notable
 wget https://download.notable.app/\?target\=deb -O /tmp/notable.deb
+# komorebi
+wget https://github.com/cheesecakeufo/komorebi/releases/download/v2.1/komorebi-2.1-64-bit.deb -O /tmp/komorebi.deb
 # create-react-app
 sudo npm i -g create-react-app
 
