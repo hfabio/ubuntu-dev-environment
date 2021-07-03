@@ -22,6 +22,10 @@ first, in your system, while its in beta: go to `Software and Updates` and chang
 ### Saving only the script
 In your recently formatted ubuntu, go to the script in raw page:
 [just click here](https://raw.githubusercontent.com/hfabio/ubuntu-dev-environment/master/ubuntu-dev-environment.sh)
+Run directly
+```bash
+  wget -qO- https://raw.githubusercontent.com/hfabio/ubuntu-dev-environment/master/ubuntu-dev-environment.sh | bash
+```
 Or paste this url:
 ```bash
   https://raw.githubusercontent.com/hfabio/ubuntu-dev-environment/master/ubuntu-dev-environment.sh
