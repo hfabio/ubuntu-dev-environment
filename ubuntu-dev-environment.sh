@@ -28,7 +28,7 @@ sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y &
 sudo apt-add-repository ppa:graphics-drivers/ppa -y
 
 #first let's install some stuff to make another stuff work or to controll system
-sudo apt-get update && sudo apt install curl -y && sudo apt-get install git zsh vim htop filezilla -y
+sudo apt-get update && sudo apt install curl -y && sudo apt-get install git zsh vim htop filezilla mc -y
 sudo apt-get install ttf-mscorefonts-installer ubuntu-restricted-extras libavcodec-extra libav-tools -y
 
 #python
