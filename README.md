@@ -86,6 +86,7 @@ sudo ./ubuntu-dev-environment.sh
 - [ToDo txt](https://extensions.gnome.org/extension/570/todotxt/) - Add a to-do list
 - [Sound Input & Output Device Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/) - not necessary anymore, but link still here
 - [Status Area Horizontal Spacing](https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/) - Reduce the horizontal spacing between icons in the top-right status area
+- [SimpleTray](https://extensions.gnome.org/extension/1483/simpletray/) - Integrate the wine system tray to the gnome shell
 ---
 # Known issues
 
