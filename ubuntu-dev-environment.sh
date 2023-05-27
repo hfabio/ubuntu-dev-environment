@@ -48,26 +48,14 @@ wget -c https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O /
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/google_chrome.deb
 # discord
 wget https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb -O /tmp/discord.deb
-# discord
-wget https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-dbgsym_8.0.33-1ubuntu22.04_amd64.deb -O mysql-workbench-community.deb
+# workbench
+wget https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-dbgsym_8.0.33-1ubuntu22.04_amd64.deb -O /tmp/mysql-workbench-community.deb
 
 # now installing .deb stuff ----------------------------------------------------
 clear_and_print 'now installing .deb stuff'
 sudo chmod 775 /tmp/*.deb
 sudo dpkg -i /tmp/*.deb || sudo apt-get --fix-broken install -y && sudo dpkg -i /tmp/*.deb
 sudo apt-get -f install
-
-# now installing no important stuff like games or music ------------------------
-clear_and_print 'now installing no important stuff like games or music'
-# removing stuff and adding ppas------------------
-sudo apt-get autoremove gimp gimp-plugin-registry
-sudo add-apt-repository ppa:otto-kesselgulasch/gimp -y
-sudo apt update
-# end removing stuff and adding ppas------------------
-
-# gimp
-sudo apt-get update
-sudo apt-get install gimp -y
 
 # gnome-tweaks
 sudo apt install gnome-tweaks -y
@@ -86,8 +74,12 @@ clear_and_print 'installing dev stuff'
 # installing docker
 clear_and_print 'installing docker'
 sudo apt-get install apt-transport-https ca-certificates gnupg-agent software-properties-common -y
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" -y
+sudo mkdir -p /etc/apt/keyrings/
+wget -O- https://download.docker.com/linux/ubuntu/gpg |                                
+    gpg --dearmor |
+    sudo tee /etc/apt/keyrings/docker.gpg > /dev/null
+echo "deb [signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable main" |
+    sudo tee /etc/apt/sources.list.d/docker.list
 sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 # docker compose
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &&
