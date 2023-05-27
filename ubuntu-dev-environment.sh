@@ -34,6 +34,9 @@ sudo apt-get install ttf-mscorefonts-installer ubuntu-restricted-extras libavcod
 #python
 sudo apt-get install python3.9 pip3 python3-mysql.connector -y
 
+#updater stuff
+wget -qO- https://raw.githubusercontent.com/hfabio/updater-stuff/master/install.sh | bash
+
 # then the IDE, browser and stuffs ---------------------------------------------
 # VSCODE
 wget https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable -O /tmp/code_latest_amd64.deb
