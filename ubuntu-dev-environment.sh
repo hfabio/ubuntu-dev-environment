@@ -48,11 +48,14 @@ wget -c https://download.teamviewer.com/download/linux/teamviewer_amd64.deb -O /
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/google_chrome.deb
 # discord
 wget https://dl.discordapp.net/apps/linux/0.0.10/discord-0.0.10.deb -O /tmp/discord.deb
+# discord
+wget https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-dbgsym_8.0.33-1ubuntu22.04_amd64.deb -O mysql-workbench-community.deb
 
 # now installing .deb stuff ----------------------------------------------------
 clear_and_print 'now installing .deb stuff'
 sudo chmod 775 /tmp/*.deb
 sudo dpkg -i /tmp/*.deb || sudo apt-get --fix-broken install -y && sudo dpkg -i /tmp/*.deb
+sudo apt-get -f install
 
 # now installing no important stuff like games or music ------------------------
 clear_and_print 'now installing no important stuff like games or music'
@@ -111,3 +114,5 @@ wget https://raw.githubusercontent.com/Viniciusalopes/zsh-magic-install/master/z
 sudo chmod 775 /tmp/zsh-magic-install.sh
 /tmp/zsh-magic-install.sh
 echo 'pay attention to change the theme and add zinit like here https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/'
+sudo chmod +x ./install-android.sh
+./install-android.sh
