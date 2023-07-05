@@ -23,14 +23,14 @@ echo 'export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_H
 
 source ~/.bashrc
 
-# Install Android Image version 29
+# Install Android Image version 33
 yes | sdkmanager --list
-yes | sdkmanager "platforms;android-29"
-yes | sdkmanager "build-tools;29.0.3"
-yes | sdkmanager --list
-yes | sdkmanager --update
-yes | sdkmanager "system-images;android-30;google_apis_playstore;x86_64"
-yes | sdkmanager --channel=3 emulator
+yes | sdkmanager --sdk_root=${ANDROID_HOME} "platforms;android-33"
+sdkmanager --sdk_root=${ANDROID_HOME} "build-tools;32.0.2"
+yes | sdkmanager --sdk_root=${ANDROID_HOME} --list
+yes | sdkmanager --sdk_root=${ANDROID_HOME} --update
+yes | sdkmanager --sdk_root=${ANDROID_HOME} "system-images;android-33;google_apis_playstore;x86_64"
+yes | sdkmanager --channel=3 --sdk_root=${ANDROID_HOME} emulator
 emulator -version
 
 sudo apt install qemu-kvm
@@ -40,8 +40,8 @@ sudo chown $USER /dev/kvm
 
 echo "INSTALL ANDROID SDK DONE!"
 
-avdmanager create avd -n phone -k "system-images;android-29;google_apis_playstore;x86_64" -d pixel
-avdmanager create avd -n tablet -d 34 -k "system-images;android-29;google_apis_playstore;x86_64"
+avdmanager create avd -n phone -k "system-images;android-33;google_apis_playstore;x86_64" -d pixel
+avdmanager create avd -n tablet -d 34 -k "system-images;android-33;google_apis_playstore;x86_64"
 
 echo 'alias tablet="emulator -avd tablet"' > ~/.aliases
 echo "source ~/.aliases" >> ~/.zshrc
