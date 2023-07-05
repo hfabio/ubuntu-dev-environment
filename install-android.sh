@@ -8,7 +8,7 @@ clear_and_print "install android"
 
 # java and gradle
 sudo apt install openjdk-11-jdk openjdk-11-jre unzip -y
-update-java-alternatives --set java-1.11.0-openjdk-amd64
+sudo update-java-alternatives --set java-1.11.0-openjdk-amd64
 java -version
 sudo apt-get install gradle -y
 
