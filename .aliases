@@ -1,0 +1,48 @@
+runtest(){
+  COUNTER=1
+  MAX_RUNS=${2:-999}
+  echo "Running test ($1) for the $COUNTER time with over $MAX_RUNS tries"
+  while [ $COUNTER -le $MAX_RUNS ] && node 'node_modules/.bin/jest' $1 ; do
+    echo ''
+    echo ''
+    echo ''
+    echo "Running test ($1) for the $COUNTER time with over $MAX_RUNS tries"
+    echo ''
+    echo ''
+    echo ''
+    COUNTER=$((COUNTER + 1))
+  done
+  
+  if [ $COUNTER -lt $MAX_RUNS ]; then
+    echo "Failed test ($1) in the $COUNTER try"
+    exit 1
+  else
+    COUNTER=$((COUNTER - 1))
+    echo "Test ($1) passed after $COUNTER tries"
+  fi
+}
+
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  [[ -a .nvmrc ]] || return
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+
+
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
