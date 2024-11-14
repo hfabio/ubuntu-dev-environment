@@ -22,6 +22,32 @@ runtest(){
   fi
 }
 
+rename-branch() {
+  if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Error: Please provide the old and new branch names as arguments. like: rename-branch old_branch new_branch"
+    return 1
+  fi
+
+  old_name="$1"
+  new_name="$2"
+  remote="origin"
+
+  # Rename the local branch
+  git branch -m "$old_name" "$new_name"
+
+  # Delete the old branch on the remote
+  git push "$remote" --delete "$old_name"
+
+  # Prevent Git from using the old name when pushing
+  git branch --unset-upstream "$new_name"
+
+  # Push the new branch to the remote
+  git push "$remote" "$new_name"
+
+  # Set the upstream branch for the new local branch
+  git push "$remote" -u "$new_name"
+}
+
 # place this after nvm initialization!
 autoload -U add-zsh-hook
 load-nvmrc() {
