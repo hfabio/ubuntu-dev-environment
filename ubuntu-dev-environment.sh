@@ -94,6 +94,14 @@ clear_and_print 'installing nvm'
 #nvm install
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
+# vim config
+mkdir -p ~/.vim ~/.vim/autoload ~/.vim/backup ~/.vim/colors ~/.vim/plugged
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+cp ./vimrc ~/.vimrc
+
+echo 'You need to use vim, and on the command mode type "PlugInstall" and press enter\n'
+
 #-------------------------------------------------------------------------------
 # finishing  -------------------------------------------------------------------
 clear_and_print 'Finishing with another update and then autoclean autoremove'
